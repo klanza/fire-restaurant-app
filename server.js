@@ -64,14 +64,23 @@ app.get("/reserved", function(req, res) {
 // ================================================================
 app.post("/api/new", function(req, res) {
     var newcustomer = req.body;
+    var tableStatus;
     // Using a RegEx Pattern to remove spaces from newCusmtomer name to create customerID
     newcustomer.customerID = newcustomer.name.replace(/\s+/g, "").toLowerCase();
   
     console.log(newcustomer);
   
-    customers.push(newcustomer);
-  
+    if(customers.length > 5){
+      waitlistCustomers.push(newcustomer);
+      tableStatus = false;
+      return tableStatus;
+    } else{
+        customers.push(newcustomer);
+        tableStatus = true;
+        return tableStatus;
+      };
     res.json(newcustomer);
+});
 
 // Listener
 // =================================================================
