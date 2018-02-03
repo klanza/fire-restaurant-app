@@ -1,0 +1,23 @@
+{
+  "name": "fire-restaurant",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klanza/fire-restaurant-app.git"
+  },
+  "author": "Justin, Darwood, Chris, Cuneyt, Kenneth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/klanza/fire-restaurant-app/issues"
+  },
+  "homepage": "https://github.com/klanza/fire-restaurant-app#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2"
+  }
+}
