@@ -32,7 +32,7 @@ var customers = [
 
 var waitlistCustomers = [
     {
-        
+
     }
 ]
 
@@ -41,7 +41,7 @@ app.get('/tables', function(req, res){
     res.json(customers);
 });
 
-app.get('/tables', function(req, res){
+app.get('/waitlist', function(req, res){
     res.json(waitlistCustomers);
 });
 
