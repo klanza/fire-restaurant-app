@@ -1,0 +1,15 @@
+.display-4{
+	text-align: center;
+}
+
+#view{
+	background-color: blue;
+	opacity: 0.7;
+	margin-top: 20px;
+}
+
+#reserve{
+	background-color: red;
+	opacity: 0.7;
+	margin-top: 20px;
+}
