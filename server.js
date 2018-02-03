@@ -13,6 +13,26 @@ var PORT = 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// Variable
+// ==============================================================
+var customers = [
+  {
+      "customerName": "Andrew",
+      "phoneNumber": "1234567890",
+      "customerEmail": "insanecrazeeguy@gmail.com",
+      "customerID": "Kapar"
+  },
+  {
+      "customerName": "Robert",
+      "phoneNumber": "0987654321",
+      "customerEmail": "normalguy@gmail.com",
+      "customerID": "Ribbit"
+      }
+]
+
+
+// Listener
+// =================================================================
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
