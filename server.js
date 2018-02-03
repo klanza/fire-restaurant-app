@@ -57,7 +57,7 @@ app.get("/tables", function(req, res) {
 });
 
 app.get("/reserved", function(req, res) {
-    res.sendFile(path.join(__dirname, "reserved.html"));
+    res.sendFile(path.join(__dirname, "reserve.html"));
   });
 
 // add new customer
