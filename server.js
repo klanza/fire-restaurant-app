@@ -30,6 +30,20 @@ var customers = [
       }
 ];
 
+var waitlistCustomers = [
+    {
+        
+    }
+]
+
+// Display API information
+app.get('/tables', function(req, res){
+    res.json(customers);
+});
+
+app.get('/tables', function(req, res){
+    res.json(waitlistCustomers);
+});
 
 // Listener
 // =================================================================
