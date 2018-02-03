@@ -32,7 +32,10 @@ var customers = [
 
 var waitlistCustomers = [
     {
-
+      "customerName": "Taylor",
+      "phoneNumber": "098765asdf4321",
+      "customerEmail": "normalguy2@gmail.com",
+      "customerID": "294858r48"
     }
 ]
 
@@ -44,6 +47,17 @@ app.get('/api/tables', function(req, res){
 app.get('/api/waitlist', function(req, res){
     res.json(waitlistCustomers);
 });
+
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "home.html"));
+});
+
+app.get("/tables", function(req, res) {
+  res.sendFile(path.join(__dirname, "tables.html"));
+});
+
+
+
 
 // Listener
 // =================================================================
