@@ -7,6 +7,7 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="./style.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
 
 </head>
 
@@ -19,8 +20,8 @@
 			<hr class="my-4">
 			<h2>Current Reservations and Waiting List</h2>
 			<p class="lead">
-			    <a class="btn btn-primary btn-lg" id="reserve" href="./tables.html" role="button">Make A Reservation</a>
-			    <a class="btn btn-primary btn-lg" id="view" href="./home.html" role="button">Home</a>
+			    <a class="btn btn-primary btn-lg" id="reserve" href="./reserved" role="button">Make A Reservation</a>
+			    <a class="btn btn-primary btn-lg" id="view" href="./" role="button">Home</a>
 			</p>
 		</div>
 
@@ -54,9 +55,27 @@
 			  </tbody>
 		</table>	
 
+	<!--
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>Current Reservations</h4>
+          </div>
+          <div class="panel-body" id="reservedTables"></div>
+        </div>
+	
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>Waiting List</h4>
+          </div>
+          <div class="panel-body" id="waitlist">
+          </div>
+        </div>
+>>>>>>> 7423c77b9f35ff7ec32737ce8a78a75ed01ff80e -->
+
 	</div>
 
 	<script type="text/javascript">
+
 
 		$.get("/api/tables", function(data) {
 			
@@ -64,6 +83,15 @@
 
 			if (data) {
 				var num = 0;
+/*
+<script type="text/javascript">
+	//dummy data
+	$("#reservedTables").text("testing");
+	$("#reservedTables").append("\ntesting\n");
+	$("#reservedTables").append("testing");
+
+	$("#waitlist").text("testing");
+>>>>>>> 7423c77b9f35ff7ec32737ce8a78a75ed01ff80e */
 
 				for (var i = 0; i < data.length; i++) {
 					var table = $("<tr><th>" + (++num) + "</th>" + 

@@ -17,22 +17,25 @@ app.use(bodyParser.json());
 // ==============================================================
 var customers = [
   {
-      "customerName": "Andrew",
-      "phoneNumber": "1234567890",
-      "customerEmail": "insanecrazeeguy@gmail.com",
+      "name": "Andrew",
+      "phone": "1234567890",
+      "email": "insanecrazeeguy@gmail.com",
       "customerID": "Kapar"
   },
   {
-      "customerName": "Robert",
-      "phoneNumber": "0987654321",
-      "customerEmail": "normalguy@gmail.com",
+      "name": "Robert",
+      "phone": "0987654321",
+      "email": "normalguy@gmail.com",
       "customerID": "Ribbit"
       }
 ];
 
 var waitlistCustomers = [
     {
-
+      "name": "Taylor",
+      "phone": "098765asdf4321",
+      "email": "normalguy2@gmail.com",
+      "customerID": "294858r48"
     }
 ]
 
@@ -43,6 +46,40 @@ app.get('/api/tables', function(req, res){
 
 app.get('/api/waitlist', function(req, res){
     res.json(waitlistCustomers);
+});
+
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "home.html"));
+});
+
+app.get("/tables", function(req, res) {
+  res.sendFile(path.join(__dirname, "tables.html"));
+});
+
+app.get("/reserved", function(req, res) {
+    res.sendFile(path.join(__dirname, "reserve.html"));
+  });
+
+// add new customer
+// ================================================================
+app.post("/api/new", function(req, res) {
+    var newcustomer = req.body;
+    var tableStatus;
+    // Using a RegEx Pattern to remove spaces from newCusmtomer name to create customerID
+    newcustomer.customerID = newcustomer.name.replace(/\s+/g, "").toLowerCase();
+  
+    console.log(newcustomer);
+  
+    if(customers.length > 5){
+      waitlistCustomers.push(newcustomer);
+      tableStatus = false;
+      return tableStatus;
+    } else{
+        customers.push(newcustomer);
+        tableStatus = true;
+        return tableStatus;
+      };
+    res.json(newcustomer);
 });
 
 // Listener
