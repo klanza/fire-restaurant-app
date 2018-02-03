@@ -45,6 +45,13 @@ app.get('/api/waitlist', function(req, res){
     res.json(waitlistCustomers);
 });
 
+app.get("/", function(req, res) {
+  res.sendFile(path.join(__dirname, "home.html"));
+});
+
+
+
+
 // Listener
 // =================================================================
 app.listen(PORT, function() {
