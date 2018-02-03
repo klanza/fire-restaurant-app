@@ -56,6 +56,9 @@ app.get("/tables", function(req, res) {
   res.sendFile(path.join(__dirname, "tables.html"));
 });
 
+app.get("/reserved", function(req, res) {
+    res.sendFile(path.join(__dirname, "reserved.html"));
+  });
 
 // add new customer
 // ================================================================
@@ -69,7 +72,6 @@ app.post("/api/new", function(req, res) {
     customers.push(newcustomer);
   
     res.json(newcustomer);
-  });
 
 // Listener
 // =================================================================
