@@ -17,24 +17,24 @@ app.use(bodyParser.json());
 // ==============================================================
 var customers = [
   {
-      "customerName": "Andrew",
-      "phoneNumber": "1234567890",
-      "customerEmail": "insanecrazeeguy@gmail.com",
+      "name": "Andrew",
+      "phone": "1234567890",
+      "email": "insanecrazeeguy@gmail.com",
       "customerID": "Kapar"
   },
   {
-      "customerName": "Robert",
-      "phoneNumber": "0987654321",
-      "customerEmail": "normalguy@gmail.com",
+      "name": "Robert",
+      "phone": "0987654321",
+      "email": "normalguy@gmail.com",
       "customerID": "Ribbit"
       }
 ];
 
 var waitlistCustomers = [
     {
-      "customerName": "Taylor",
-      "phoneNumber": "098765asdf4321",
-      "customerEmail": "normalguy2@gmail.com",
+      "name": "Taylor",
+      "phone": "098765asdf4321",
+      "email": "normalguy2@gmail.com",
       "customerID": "294858r48"
     }
 ]
@@ -57,7 +57,19 @@ app.get("/tables", function(req, res) {
 });
 
 
-
+// add new customer
+// ================================================================
+app.post("/api/new", function(req, res) {
+    var newcustomer = req.body;
+    // Using a RegEx Pattern to remove spaces from newCusmtomer name to create customerID
+    newcustomer.customerID = newcustomer.name.replace(/\s+/g, "").toLowerCase();
+  
+    console.log(newcustomer);
+  
+    customers.push(newcustomer);
+  
+    res.json(newcustomer);
+  });
 
 // Listener
 // =================================================================
