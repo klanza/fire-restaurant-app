@@ -7,6 +7,7 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="./style.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
 
 </head>
 
@@ -19,79 +20,38 @@
 			<hr class="my-4">
 			<h2>Current Reservations and Waiting List</h2>
 			<p class="lead">
-			    <a class="btn btn-primary btn-lg" id="reserve" href="./tables.html" role="button">Make A Reservation</a>
-			    <a class="btn btn-primary btn-lg" id="view" href="./home.html" role="button">Home</a>
+			    <a class="btn btn-primary btn-lg" id="reserve" href="./tables" role="button">Make A Reservation</a>
+			    <a class="btn btn-primary btn-lg" id="view" href="./home" role="button">Home</a>
 			</p>
 		</div>
-
-		<table class="table table-hover">
-			<header><h3>Current Reserved Tables</h3></header>
-			  <thead>
-			    <tr>
-			      <th scope="col">#</th>
-			      <th scope="col">Name</th>
-			      <th scope="col">Phone Number</th>
-			      <th scope="col">Email</th>
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <tr>
-			      <th scope="row">1</th>
-			      <td>Mark</td>
-			      <td>Otto</td>
-			      <td>@mdo</td>
-			    </tr>
-			    <tr>
-			      <th scope="row">2</th>
-			      <td>Jacob</td>
-			      <td>Thornton</td>
-			      <td>@fat</td>
-			    </tr>
-			    <tr>
-			      <th scope="row">3</th>
-			      <td colspan="2">Larry the Bird</td>
-			      <td>@twitter</td>
-			    </tr>
-			  </tbody>
-		</table>
-
-		<table class="table table-hover">
-			<header><h3>Current Waitlist</h3></header>
-			  <thead>
-			    <tr>
-			      <th scope="col">#</th>
-			      <th scope="col">Name</th>
-			      <th scope="col">Phone Number</th>
-			      <th scope="col">Email</th>
-			    </tr>
-			  </thead>
-			  <tbody>
-			    <tr>
-			      <th scope="row">1</th>
-			      <td>Mark</td>
-			      <td>Otto</td>
-			      <td>@mdo</td>
-			    </tr>
-			    <tr>
-			      <th scope="row">2</th>
-			      <td>Jacob</td>
-			      <td>Thornton</td>
-			      <td>@fat</td>
-			    </tr>
-			    <tr>
-			      <th scope="row">3</th>
-			      <td colspan="2">Larry the Bird</td>
-			      <td>@twitter</td>
-			    </tr>
-			  </tbody>
-		</table>	
+	<!--Panels instead of tables....-->
+	<!--panel for reservation-->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>Current Reservations</h4>
+          </div>
+          <div class="panel-body" id="reservedTables"></div>
+        </div>
+	<!--panel for waitlist-->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4>Waiting List</h4>
+          </div>
+          <div class="panel-body" id="waitlist">
+          </div>
+        </div>
 
 	</div>
 
 </body>
 
 <script type="text/javascript">
+	//dummy data
+	$("#reservedTables").text("testing");
+	$("#reservedTables").append("\ntesting");
+	$("#reservedTables").append("testing");
 
+	$("#waitlist").text("testing");
 
 
 
