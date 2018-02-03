@@ -24,15 +24,45 @@
 			    <a class="btn btn-primary btn-lg" id="view" href="./" role="button">Home</a>
 			</p>
 		</div>
-	<!--Panels instead of tables....-->
-	<!--panel for reservation-->
+
+		<table class="table table-hover" id="table-main">
+			<header><h3>Current Reserved Tables</h3></header>
+			  <thead>
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">Name</th>
+			      <th scope="col">Phone Number</th>
+			      <th scope="col">Email</th>
+			    </tr>
+			  </thead>
+			  <tbody id="table-body">
+			    
+			  </tbody>
+		</table>
+
+		<table class="table table-hover">
+			<header><h3>Current Waitlist</h3></header>
+			  <thead>
+			    <tr>
+			      <th scope="col">#</th>
+			      <th scope="col">Name</th>
+			      <th scope="col">Phone Number</th>
+			      <th scope="col">Email</th>
+			    </tr>
+			  </thead>
+			  <tbody id="table-waitlist">
+			    
+			  </tbody>
+		</table>	
+
+	<!--
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4>Current Reservations</h4>
           </div>
           <div class="panel-body" id="reservedTables"></div>
         </div>
-	<!--panel for waitlist-->
+	
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4>Waiting List</h4>
@@ -40,11 +70,20 @@
           <div class="panel-body" id="waitlist">
           </div>
         </div>
+>>>>>>> 7423c77b9f35ff7ec32737ce8a78a75ed01ff80e -->
 
 	</div>
 
-</body>
+	<script type="text/javascript">
 
+
+		$.get("/api/tables", function(data) {
+			
+			console.log(data);
+
+			if (data) {
+				var num = 0;
+/*
 <script type="text/javascript">
 	//dummy data
 	$("#reservedTables").text("testing");
@@ -52,11 +91,45 @@
 	$("#reservedTables").append("testing");
 
 	$("#waitlist").text("testing");
+>>>>>>> 7423c77b9f35ff7ec32737ce8a78a75ed01ff80e */
 
+				for (var i = 0; i < data.length; i++) {
+					var table = $("<tr><th>" + (++num) + "</th>" + 
+							   "<td>" + data[i].name + "</td>" + 
+							   "<td>" + data[i].phone + "</td>" +
+							   "<td>" + data[i].email + "</td>" +);
 
+					$("#table-body").append(table);	
+				}
+			}
+			else {
+				$("#table-main").text("Not available");
+			}
+		});
 
+		$.get("/api/waitlist", function(data) {
+			
+			console.log(data);
 
+			if (data) {
+				var num = 0;
 
-</script>
+				for (var i = 0; i < data.length; i++) {
+					var table = $("<tr><th>" + (++num) + "</th>" + 
+							   "<td>" + data[i].name + "</td>" + 
+							   "<td>" + data[i].phone + "</td>" +
+							   "<td>" + data[i].email + "</td>" +);
+
+					$("#table-waitlist").append(table);	
+				}
+			}
+			else {
+				$("#table-main").text("Not available");
+			}
+		});
+
+	</script>
+
+</body>
 
 </html>
