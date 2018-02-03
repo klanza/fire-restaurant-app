@@ -37,11 +37,11 @@ var waitlistCustomers = [
 ]
 
 // Display API information
-app.get('/tables', function(req, res){
+app.get('/api/tables', function(req, res){
     res.json(customers);
 });
 
-app.get('/tables', function(req, res){
+app.get('/api/waitlist', function(req, res){
     res.json(waitlistCustomers);
 });
 
