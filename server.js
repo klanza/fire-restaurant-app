@@ -32,7 +32,7 @@ var customers = [
 
 var waitlistCustomers = [
     {
-        
+
     }
 ]
 
